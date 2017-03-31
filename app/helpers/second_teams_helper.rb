@@ -1,0 +1,2 @@
+module SecondTeamsHelper
+end

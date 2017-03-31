@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>First Team</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Game</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @first_teams.each do |first_team| %>
+      <tr>
+        <td><%= first_team.title %></td>
+      <td><% game = Game.all.map { |g| [ g.id, g.game_date,] } %>
+      <%= options_for_select(game) %> </td>
+        <td><%= link_to 'Show', first_team %></td>
+        <td><%= link_to 'Edit', edit_first_team_path(first_team) %></td>
+        <td><%= link_to 'Destroy', first_team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New First Team', new_first_team_path %>

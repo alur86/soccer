@@ -1,0 +1,67 @@
+<%= form_for(event) do |f| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :team_id %>
+    <%= f.number_field :team_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :game_id %>
+    <%= f.number_field :game_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :player_id %>
+    <%= f.number_field :player_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :strikes %>
+    <%= f.number_field :strikes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :yellow_card %>
+    <%= f.check_box :yellow_card %>
+  </div>
+
+  <div class="field">
+    <%= f.label :read_card %>
+    <%= f.check_box :read_card %>
+  </div>
+
+  <div class="field">
+    <%= f.label :penalty_kiks %>
+    <%= f.number_field :penalty_kiks %>
+  </div>
+
+  <div class="field">
+    <%= f.label :goal_kiks %>
+    <%= f.number_field :goal_kiks %>
+  </div>
+
+  <div class="field">
+    <%= f.label :corner_kicks %>
+    <%= f.number_field :corner_kicks %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pushes %>
+    <%= f.number_field :pushes %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

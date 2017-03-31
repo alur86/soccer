@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game type:</strong>
+  <%= @game.game_type %>
+</p>
+
+<p>
+  <strong>Game date:</strong>
+  <%= @game.game_date %>
+</p>
+
+<p>
+  <strong>First Team:</strong>
+<% teams1 = FirstTeam.all.map { |tm1| [tm1.title] } %>
+        <%= options_for_select(teams1) %>
+</p>
+
+<p>
+  <strong>Second Team:</strong>
+  <% teams2 = SecondTeam.all.map { |tm2| [tm2.title] } %>
+        <%= options_for_select(teams2) %>
+</p>
+
+<p>
+  <strong>Score 1st Team:</strong>
+  <%= @game.score1 %>
+</p>
+
+<p>
+  <strong>Score 2nd Team:</strong>
+  <%= @game.score2 %>
+</p>
+= @game.score2 %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

@@ -1,0 +1,72 @@
+<%= form_for(one_team_player) do |f| %>
+  <% if one_team_player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(one_team_player.errors.count, "error") %> prohibited this one_team_player from being saved:</h2>
+
+      <ul>
+      <% one_team_player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+  </div>
+
+  <div class="field">
+   Team
+  <%=  f.collection_select(:team_id1, FirstTeam.all, :id, :title, :include_blank => "Please select") %>
+  </div>
+  </div>
+  <div class="field">
+   Game
+  <%=  f.collection_select(:game_id, Game.all, :id, :game_date, :include_blank => "Please select") %>
+  </div>
+  </div>
+  <div class="field">
+   Strikers
+  <%=  f.collection_select(:event_id, Event.all, :id, :strikers, :include_blank => "Please select") %>
+  </div>
+
+  <div class="field">
+  Yellow card
+  <%=  f.collection_select(:event_id, Event.all, :id, :yellow_card, :include_blank => "Please select") %>
+  </div>
+    <div class="field">
+   Red card
+  <%=  f.collection_select(:event_id, Event.all, :id, :red_card, :include_blank => "Please select") %>
+  </div>
+    <div class="field">
+   Penalty
+  <%=  f.collection_select(:event_id, Event.all, :id, :penalty_kiks, :include_blank => "Please select") %>
+  </div>
+    <div class="field">
+   Goal
+  <%=  f.collection_select(:event_id, Event.all, :id, :goal_kiks, :include_blank => "Please select") %>
+  </div>
+    <div class="field">
+   Corners
+  <%=  f.collection_select(:event_id, Event.all, :id, :corner_kicks, :include_blank => "Please select") %>
+  </div>
+  ]  <div class="field">
+   Pushes
+  <%=  f.collection_select(:event_id, Event.all, :id, :pushes, :include_blank => "Please select") %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

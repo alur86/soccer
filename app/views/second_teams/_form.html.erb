@@ -1,0 +1,28 @@
+<%= form_for(second_team) do |f| %>
+  <% if second_team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(second_team.errors.count, "error") %> prohibited this second_team from being saved:</h2>
+
+      <ul>
+      <% second_team.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+<div class="field">
+  Game Date
+   <%=  f.collection_select(:game_id, Game.all, :id, :game_date, :include_blank => "Please select") %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

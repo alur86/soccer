@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @event.team_id %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @event.game_id %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @event.player_id %>
+</p>
+
+<p>
+  <strong>Strikes:</strong>
+  <%= @event.strikes %>
+</p>
+
+<p>
+  <strong>Yellow card:</strong>
+  <%= @event.yellow_card %>
+</p>
+
+<p>
+  <strong>Read card:</strong>
+  <%= @event.read_card %>
+</p>
+
+<p>
+  <strong>Penalty kiks:</strong>
+  <%= @event.penalty_kiks %>
+</p>
+
+<p>
+  <strong>Goal kiks:</strong>
+  <%= @event.goal_kiks %>
+</p>
+
+<p>
+  <strong>Corner kicks:</strong>
+  <%= @event.corner_kicks %>
+</p>
+
+<p>
+  <strong>Pushes:</strong>
+  <%= @event.pushes %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

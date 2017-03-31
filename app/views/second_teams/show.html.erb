@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @second_team.title %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+ <% game = Game.all.map { |g| [g.game_date] } %>
+        <%= options_for_select(game) %>
+</p>
+</p>
+
+<%= link_to 'Edit', edit_second_team_path(@second_team) %> |
+<%= link_to 'Back', second_teams_path %>
